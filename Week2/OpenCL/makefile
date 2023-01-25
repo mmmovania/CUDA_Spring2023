@@ -1,11 +1,15 @@
-add: AddTwoNumberOnGPU.c
-	gcc AddTwoNumberOnGPU.c -Wall -o executable -l OpenCL
+CC = gcc
+CFLAGS = -Wall -Wextra
+LDFLAGS = -l OpenCL
 
-init: InitDataOnGPU.c
-	gcc InitDataOnGPU.c -Wall -o executable -l OpenCL
+SOURCE = InitDataOnGPU.c
+SOURCE = AddTwoNumberOnGPU.c
 
-run: executable
-	./executable
+$(SOURCE:.c=): $(SOURCE)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-clean: executable
-	rm executable
+run: $(SOURCE:.c=)
+	./$^
+
+clean:
+	rm -f $(SOURCE:.c=) *.o *.out *.exe
