@@ -1,24 +1,18 @@
-default:
-	@echo "make hello1"
-	@echo "make hello2"
-	@echo "make hello3"
-	@echo "make run"
-	@echo "make clean"
+CC = gcc
+CFLAGS = -Wall -Wextra
+LDFLAGS = -l OpenCL
 
-GettingStarted: GettingStarted.c
-	gcc GettingStarted.c -Wall -o executable
+SOURCE = GettingStarted.c
+SOURCE = Hello1.c
+SOURCE = Hello2.c
+SOURCE = Hello3.c
 
-hello1: Hello1.c
-	gcc Hello1.c -Wall -o executable
 
-hello2: Hello2.c
-	gcc Hello2.c -Wall -o executable -lOpenCL
+$(SOURCE:.c=): $(SOURCE)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-hello3: Hello3.c
-	gcc Hello3.c -Wall -o executable -lOpenCL
-
-run:
-	./executable
+run: $(SOURCE:.c=)
+	./$^
 
 clean:
-	rm executable
+	rm -f $(SOURCE:.c=) *.o *.out *.exe
