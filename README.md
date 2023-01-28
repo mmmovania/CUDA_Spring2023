@@ -15,3 +15,5 @@ We extend our knowledge of CUDA slightly by getting to know how to initialize da
 We extend our knowledge of CUDA by getting to know how to pass a large array of data on the device (GPU). We also see how to time code on the CPU as well as on the GPU.  
 ### update
 @Qazalbash (Meesum) has shared OpenCL version of Week 3 codes. Those of you who do not have an NVIDIA GPU, you can use the OpenCL version of codes. Thanks @Qazalbash (Meesum).
+### update 2
+@AkeelMedina22 (Akeel) has shared Week1 to Week3 codes converted to NVIDIA Warp library (https://github.com/nvidia/warp) if you want to create code in python and call CUDA kernels. Thanks @AkeelMedina22 (Akeel).
