@@ -10,3 +10,6 @@ We extend our knowledge of CUDA slightly by getting to know how to initialize da
 ## Week 3
 We extend our knowledge of CUDA by getting to know how to pass a large array of data on the device (GPU). We also see how to time code on the CPU as well as on the GPU. @Qazalbash (Meesum) has shared OpenCL version of Week 3 codes. Those of you who do not have an NVIDIA GPU, you can use the OpenCL version of codes. Thanks @Qazalbash (Meesum).
 @AkeelMedina22 (Akeel) has shared Week1 to Week3 codes converted to NVIDIA Warp library (https://github.com/nvidia/warp) if you want to create code in python and call CUDA kernels. Thanks @AkeelMedina22 (Akeel).
+
+## Week 4
+We extend our knowledge by starting work in 2D. We first start with creating a simple image viewer in python (ImageViewer.ipynb). Next we see how to laucn threads in 2D (simple2D.ipynb). Then, we look at how to do raw image processing in CUDA (RawImageProcessing.ipynb) and Finally, we wrap up this week with a small task where students are asked to finish an implementation of matrix multiplication in CUDA (MatrixMult.ipynb). 
