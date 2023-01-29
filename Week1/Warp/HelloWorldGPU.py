@@ -3,14 +3,14 @@ import numpy as np
 
 wp.init()
 
+
 @wp.kernel
 def HelloWorldKernel():
     print("Hello World from the GPU!")
 
+
 # launch kernel
-wp.launch(kernel=HelloWorldKernel,
-            dim=8,
-            inputs=[])
+wp.launch(kernel=HelloWorldKernel, dim=8, inputs=[])
 
 # Note that synchronization is not always required, like in CUDA.
 # Check the FAQ's for more details: https://github.com/NVIDIA/warp
