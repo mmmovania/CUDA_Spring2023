@@ -1,6 +1,6 @@
 # CUDA_Spring2023
 
-The companion git repo for my Spring 2023 CUDA course. The first week work is largely getting started with the two most common machine and deeplearning platforms Google Colab and Kaggle. Both are equally good but Kaggle provides more recent GPUs and provides a range of GPUs to pick from. Google Colab is limited to one GPU or a TPU. I have an excellent batch of students with me this term who have already started extending the course codes to alternate frameworks. Thanks [Meesum Ali Qazalbash](https://github.com/Qazalbash) for the OpenCL port and [Akeel Madina](https://www.github.com/AkeelMedina22) for the [NVIDIA warp](https://github.com/nvidia/warp) conversion of codes.
+The companion git repo for my Spring 2023 CUDA course. The first week work is largely getting started with the two most common machine and deeplearning platforms Google Colab and Kaggle. Both are equally good but Kaggle provides more recent GPUs and provides a range of GPUs to pick from. Google Colab is limited to one GPU or a TPU. I have an excellent batch of students with me this term who have already started extending the course codes to alternate frameworks. Thanks [Meesum Ali Qazalbash](https://github.com/Qazalbash) for the OpenCL port and [Akeel Medina](https://www.github.com/AkeelMedina22) for the [NVIDIA warp](https://github.com/nvidia/warp) conversion of codes.
 
 ## Week 1
 
@@ -13,7 +13,7 @@ We extend our knowledge of CUDA slightly by getting to know how to initialize da
 ## Week 3
 
 We extend our knowledge of CUDA by getting to know how to pass a large array of data on the device (GPU). We also see how to time code on the CPU as well as on the GPU. [Meesum Ali Qazalbash](https//github.com/Qazalbash) has shared OpenCL version of Week 3 codes. Those of you who do not have an NVIDIA GPU, you can use the OpenCL version of codes. Thanks [Meesum Ali Qazalbash](https//github.com/Qazalbash).
-[Akeel Madina](https://www.github.com/AkeelMedina22) has shared Week1 to Week3 codes converted to [NVIDIA Warp library](https://github.com/nvidia/warp) if you want to create code in python and call CUDA kernels. Thanks [Akeel Madina](https://www.github.com/AkeelMedina22).
+[Akeel Medina](https://www.github.com/AkeelMedina22) has shared Week1 to Week3 codes converted to [NVIDIA Warp library](https://github.com/nvidia/warp) if you want to create code in python and call CUDA kernels. Thanks [Akeel Medina](https://www.github.com/AkeelMedina22).
 
 ## Week 4
 
