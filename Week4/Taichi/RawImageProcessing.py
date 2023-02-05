@@ -7,10 +7,11 @@ https://docs.taichi-lang.org/docs/performance. As you can see, using Taichi to i
 full potential can be incredibly complex, and there are many interesting uses for it.
 '''
 
-import taichi as ti
-import numpy as np
-import cv2 as cv
 import os
+
+import cv2 as cv
+import numpy as np
+import taichi as ti
 import wget
 
 ti.init(arch=ti.gpu)
@@ -21,7 +22,12 @@ if not os.path.exists("Week4/Taichi/img.jpg"):
 
 I = cv.imread("Week4/Taichi/img.jpg")
 # Taichi GUI pixel max value is 1.0
-I = cv.normalize(I, None, alpha=0.00001, beta=1, norm_type=cv.NORM_MINMAX, dtype=cv.CV_32F)
+I = cv.normalize(I,
+                 None,
+                 alpha=0.00001,
+                 beta=1,
+                 norm_type=cv.NORM_MINMAX,
+                 dtype=cv.CV_32F)
 
 HEIGHT, WIDTH, CHANNELS = I.shape
 pixels = ti.field(dtype=float, shape=(WIDTH, HEIGHT, CHANNELS))
@@ -33,10 +39,10 @@ pixels.from_numpy(np.rot90(np.rot90(np.rot90(I))))
 @ti.kernel
 def brighten(coeff: float):
     # The outer for loop only is Taichi accelerated
-    for i,j in ti.ndrange(WIDTH, HEIGHT):
-        pixels[i,j,0] *= coeff
-        pixels[i,j,1] *= coeff
-        pixels[i,j,2] *= coeff
+    for i, j in ti.ndrange(WIDTH, HEIGHT):
+        pixels[i, j, 0] *= coeff
+        pixels[i, j, 1] *= coeff
+        pixels[i, j, 2] *= coeff
 
 
 if __name__ == "__main__":
@@ -46,13 +52,13 @@ if __name__ == "__main__":
     sign = 1.0
     count = 0
 
-    while gui.running: 
-        
+    while gui.running:
+
         if count == 100:
-            coeff += 0.02*sign
+            coeff += 0.02 * sign
             sign *= -1.0
             count = 0
-        count+=1
+        count += 1
 
         brighten(coeff)
         gui.set_image(pixels)

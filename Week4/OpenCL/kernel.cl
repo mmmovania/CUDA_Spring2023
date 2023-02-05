@@ -19,9 +19,9 @@ __kernel void matrix_multiplication(__global const float *A,
     C[i * *N + j] = sum;
 }
 
-__kernel void PictureKernel(__global uint8_t *d_Pin, __global uint8_t *d_Pout,
-                            __global int *n, __global int *m,
-                            __global float *brightness = 1) {
+__kernel void PictureKernel(__global unsigned char *d_Pin,
+                            __global unsigned char *d_Pout, __global int *n,
+                            __global int *m, __global float *brightness) {
     // Calculate the row #
     // int Row = blockIdx.y * blockDim.y + threadIdx.y;
     int Row = get_group_id(1) * get_local_size(1) + get_local_id(1);
@@ -30,11 +30,23 @@ __kernel void PictureKernel(__global uint8_t *d_Pin, __global uint8_t *d_Pout,
     // int Col = blockIdx.x * blockDim.x + threadIdx.x;
     int Col = get_global_id(0) * get_local_size(0) + get_local_id(0);
 
-    if ((Row < m) && (Col < n)) {
-        int offset = (Row * n) + Col;
+    if ((Row < *m) && (Col < *n)) {
+        int offset = (Row * *n) + Col;
         // this is to flip the output image
-        int offset2 = (((n - 1) - Row) * n) + Col;
+        int offset2 = (((*n - 1) - Row) * *n) + Col;
 
-        d_Pout[offset2] = d_Pin[offset] * brightness;
+        d_Pout[offset2] = d_Pin[offset] * *brightness;
     }
+}
+
+__kernel void Simple2D(__global int *array) {
+    int index_x = get_group_id(0) * get_local_size(0) + get_local_id(0);
+    int index_y = get_group_id(1) * get_local_size(1) + get_local_id(1);
+
+    int grid_width = get_num_groups(0) * get_local_size(0);
+    int index      = index_y * grid_width + index_x;
+
+    int result = get_group_id(1) * get_num_groups(0) + get_group_id(0);
+
+    array[index] = result;
 }
