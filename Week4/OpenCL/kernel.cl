@@ -19,16 +19,17 @@ __kernel void matrix_multiplication(__global const float *A,
     C[i * *N + j] = sum;
 }
 
-__kernel void PictureKernel(__global unsigned char *d_Pin,
-                            __global unsigned char *d_Pout, __global int *n,
-                            __global int *m, __global float *brightness) {
+__kernel void PictureKernel(__global const unsigned char *d_Pin,
+                            __global unsigned char       *d_Pout,
+                            __global const int *n, __global const int *m,
+                            __global const float *brightness) {
     // Calculate the row #
     // int Row = blockIdx.y * blockDim.y + threadIdx.y;
     int Row = get_group_id(1) * get_local_size(1) + get_local_id(1);
 
     // Calculate the column #
     // int Col = blockIdx.x * blockDim.x + threadIdx.x;
-    int Col = get_global_id(0) * get_local_size(0) + get_local_id(0);
+    int Col = get_group_id(0) * get_local_size(0) + get_local_id(0);
 
     if ((Row < *m) && (Col < *n)) {
         int offset = (Row * *n) + Col;

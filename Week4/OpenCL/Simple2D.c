@@ -10,10 +10,10 @@ typedef struct {
 } dim3;
 
 int main(void) {
-    int num_elements_x = 16;
-    int num_elements_y = 16;
+    const int num_elements_x = 16;
+    const int num_elements_y = 16;
 
-    int num_bytes = num_elements_x * num_elements_y * sizeof(int);
+    const int num_bytes = num_elements_x * num_elements_y * sizeof(int);
 
     int* array = (int*)malloc(num_bytes);
 
@@ -25,10 +25,12 @@ int main(void) {
     grid_size.x = num_elements_x;
     grid_size.y = num_elements_y;
 
+    // block dimension
     size_t* global_work_size = (size_t*)malloc(2 * sizeof(size_t));
     *global_work_size        = grid_size.x;
     *(global_work_size + 1)  = grid_size.y;
 
+    // grid dimension
     size_t* local_work_size = (size_t*)malloc(2 * sizeof(size_t));
     *local_work_size        = block_size.x;
     *(local_work_size + 1)  = block_size.y;
@@ -92,14 +94,6 @@ int main(void) {
 
     if (err != CL_SUCCESS) {
         printf("Error: %d. OpenCL could not create buffer.", err);
-        return -1;
-    }
-
-    err = clEnqueueWriteBuffer(queue, array_mem_obj, CL_TRUE, 0, num_bytes,
-                               array, 0, NULL, NULL);
-
-    if (err != CL_SUCCESS) {
-        printf("Error: %d. OpenCL could not write buffer.", err);
         return -1;
     }
 
