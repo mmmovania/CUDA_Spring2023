@@ -27,6 +27,10 @@ We now see how we can use shared memory to efficienlty optimize writing to devic
 
 We start Week 6 with understanding parallel reduction which is usually used to parallelize sum calculation on the GPU. The first example [ReductionSumGPU](Week6/ReductionSumGPU.ipynb) demonstrates how to implement naive reduction on the CPU and then on the GPU. Finally, we see an implementation of reduction which is optimized by avoiding branch divergence. The second example [DotProductGPU](Week6/DotProductGPU.ipynb) calculates dot product on the GPU using shared memory and parallel reduction. In the first phase, the vector products are calculated and stored in shared memory. In the second phase, the product pair are summed using parallel reduction. Finally, we cover how to do basic profiling of our code using tools that ship with the NVIDIA CUDA Computing SDK namely nvprof and ncu in [TestProfilers_nvprof_ncu](Week6/TestProfilers_nvprof_ncu.ipynb).
 
+## Week 7
+
+Week 7 starts with understanding of global static memory, unified memory and zero copy memory. We give three examples on these including [globalStaticMemory](Week7/globalStaticMemory.ipynb), [SumArrayZeroCopy](Week7/SumArrayZeroCopy.ipynb) and [DotProductGPU_UnifiedMemory](Week7/DotProductGPU_UnifiedMemory.ipynb). Finally, we start with the first parallel pattern convolution and see an example of 1D convolution in [Conv1D](Week7/Conv1D.ipynb).
+
 # Contributors
 
 <a href="https://github.com/mmmovania/CUDA_Spring2023/graphs/contributors">
