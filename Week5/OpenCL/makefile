@@ -1,0 +1,18 @@
+CC = gcc
+CFLAG = -Wall -Wextra
+LDFLAG = -lOpenCL
+SOURCE_MATRIX = MatrixMultiplicationTiled
+SOURCE_SMBM = SharedMemoryBitmap
+
+$(SOURCE_SMBM): $(SOURCE_SMBM).c
+	$(CC) $(CFLAG) $(SOURCE_SMBM).c -o $(SOURCE_SMBM) $(LDFLAG)
+
+$(SOURCE_MATRIX): $(SOURCE_MATRIX).c
+	$(CC) $(CFLAG) $(SOURCE_MATRIX).c -o $(SOURCE_MATRIX) $(LDFLAG)
+
+run: $(SOURCE_MATRIX) $(SOURCE_SMBM)
+	./$(SOURCE_MATRIX)
+	./$(SOURCE_SMBM)
+
+clean:
+	rm -f $(SOURCE_MATRIX) $(SOURCE_SMBM)
