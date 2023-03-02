@@ -29,7 +29,7 @@ We start Week 6 with understanding parallel reduction which is usually used to p
 
 ## Week 7
 
-Week 7 starts with understanding of global static memory, unified memory and zero copy memory. We give three examples on these including [globalStaticMemory](Week7/globalStaticMemory.ipynb), [SumArrayZeroCopy](Week7/SumArrayZeroCopy.ipynb) and [DotProductGPU_UnifiedMemory](Week7/DotProductGPU_UnifiedMemory.ipynb). Finally, we start with the first parallel pattern convolution and see an example of 1D convolution in [Conv1D](Week7/Conv1D.ipynb).
+Week 7 starts with understanding of global static memory, unified memory and zero copy memory. We give three examples on these including [globalStaticMemory](Week7/globalStaticMemory.ipynb), [SumArrayZeroCopy](Week7/SumArrayZeroCopy.ipynb) and [DotProductGPU_UnifiedMemory](Week7/DotProductGPU_UnifiedMemory.ipynb). 
 
 ## Week 8
 
