@@ -31,6 +31,10 @@ We start Week 6 with understanding parallel reduction which is usually used to p
 
 Week 7 starts with understanding of global static memory, unified memory and zero copy memory. We give three examples on these including [globalStaticMemory](Week7/globalStaticMemory.ipynb), [SumArrayZeroCopy](Week7/SumArrayZeroCopy.ipynb) and [DotProductGPU_UnifiedMemory](Week7/DotProductGPU_UnifiedMemory.ipynb). Finally, we start with the first parallel pattern convolution and see an example of 1D convolution in [Conv1D](Week7/Conv1D.ipynb).
 
+## Week 8
+
+With Week 8, we start working on parallel patterns. We talk about two patterns in Week 8. Convolution and Prefix Sum. The first pattern (Convolution) which helps us filter a given set of data with some set of coefficients (kernel or mask). The first example [Conv1D](Week8/Conv1D.ipynb) shows how to carry out 1D convolution in CUDA. The next example [Conv1D_Modified](Week8/Conv1D_Modified.ipynb) shows how to move the filter mask into constant memory to optimize read accessses inside the CUDA kernel. Finally, we wrap the dicussion on convolution with implementing tiling whereby halo elements are moved from global memory into shared memory to increase the memory acces bandwidth. This is shown in [Conv1D_Tiled](Week8/Conv1D_Tiled.ipynb) exmaple. After convolution, we move to prefix sum. Two examples are given: [PrefixSum_Correct](Week8/PrefixSum_Correct.ipynb) and [PrefixSum_WorkEfficient](Week8/PrefixSum_WorkEfficient.ipynb).
+
 # Contributors
 
 <a href="https://github.com/mmmovania/CUDA_Spring2023/graphs/contributors">
