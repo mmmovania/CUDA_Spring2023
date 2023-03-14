@@ -37,7 +37,7 @@ With Week 8, we start working on parallel patterns. We talk about two patterns i
 
 ## Week 9
 
-Week 9 focuses on the third parallel pattern that is histogram. We talk about four different strategies for computing the histogram. These strategies are given in four examples [Strategy 1](Week9/Histogram_Strategy_1.ipynb), [Strategy 2](Week9/Histogram_Strategy_2.ipynb), [Strategy 3](Week9/Histogram_Strategy_3.ipynb) and [Strategy 4](Week9/Histogram_Strategy_4.ipynb).
+Week 9 focuses on the third parallel pattern that is histogram. We talk about four different strategies for computing the histogram. These strategies are given in four examples: [Strategy 1](Week9/Histogram_Strategy_1.ipynb), [Strategy 2](Week9/Histogram_Strategy_2.ipynb), [Strategy 3](Week9/Histogram_Strategy_3.ipynb) and [Strategy 4](Week9/Histogram_Strategy_4.ipynb).
 
 # Contributors
 
