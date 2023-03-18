@@ -39,6 +39,10 @@ With Week 8, we start working on parallel patterns. We talk about two patterns i
 
 Week 9 focuses on the third parallel pattern that is histogram. We talk about four different strategies for computing the histogram. These strategies are given in four examples: [Strategy 1](Week9/Histogram_Strategy_1.ipynb), [Strategy 2](Week9/Histogram_Strategy_2.ipynb), [Strategy 3](Week9/Histogram_Strategy_3.ipynb) and [Strategy 4](Week9/Histogram_Strategy_4.ipynb).
 
+## Week 10
+
+Week 10 will be focusing on SpMV formats. We will look at the stardard data formats for use in Sparse Matrix Vector multiplication. The example implementation is shared in [SpMV_Formats](Week10/SpMV_Formats.ipynb).
+
 # Contributors
 
 <a href="https://github.com/mmmovania/CUDA_Spring2023/graphs/contributors">
