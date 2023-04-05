@@ -43,6 +43,26 @@ Week 9 focuses on the third parallel pattern that is histogram. We talk about fo
 
 Week 10 will be focusing on SpMV formats. We will look at the stardard data formats for use in Sparse Matrix Vector multiplication. The example implementation is shared in [SpMV_Formats](Week10/SpMV_Formats.ipynb).
 
+## Week 11
+
+Week 11 focusess on divide and conquer based sorting algorithm. In particular, we work with the parallelization of the merge operation in the merge sort algorithm. We cover one example [MergeSort_GPU](MergeSort_GPU.ipynb) to demonstrate this.
+
+## Week 12
+
+Week 12 focusess on dynamic parallelism in CUDA that is an ability to launch multiple CUDA kernels from a single CUDA kernel. We give one example of this [CUDA_DynamicParallelism](Week12/CUDA_DynamicParallelism.ipynb).
+
+## Week 13
+
+In Week 13, we focus on concurrency using CUDA streams. We cover the streams in detail using three examples, [CUDA_Streams](Week13/CUDA_Streams.ipynb), [CUDA_Streams](Week13/CUDA_Streams.ipynb) and [CUDA_Streams_SyncEvents](Week13/CUDA_Streams_SyncEvents.ipynb). 
+
+## Week 14
+
+So in the first 13 weeks, we cover CUDA C API and the different features of it. In the remaining weeks, that is Week 14 and Week 15, we focus on alternate parallel prgramming tools. In particular, we first focus on OpenMP, a simple pragma directive based parallel programming API. We cover it using one example [OpenMP_GettingStarted](Week14/OpenMP_GettingStarted.ipynb).
+
+## Week 15
+
+In the final learning Week, we talk about using CUDA in python code using Numba and PyCUDA. Two examples are given for each in [HelloNumba](Week15/HelloNumba.ipynb) and [HelloPyCUDA](Week15/HelloPyCUDA.ipynb).
+
 # Contributors
 
 <a href="https://github.com/mmmovania/CUDA_Spring2023/graphs/contributors">
